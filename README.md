@@ -39,3 +39,11 @@ Catch some bonus, that will drive the ship for you (autopilot), or increase your
 
 This game is really a rough alpha version, Enjoy !!!
 Thanks to all the people  @[TIG Forum](https://forums.tigsource.com/index.php?topic=2422.0), that provided support & feedback.
+
+## :vhs: Misc videos & articles
+
+- :computer: [VipeUt Bootleg Demake](https://www.youtube.com/watch?v=WAhoYAiNYAI) video capture
+- :joystick: [A real demake running on the real Vectrex](https://www.youtube.com/watch?v=1uM52IyuvSw)
+- :newspaper: [VipeUt on Retro Gaming Magazine](https://web.archive.org/web/20150315020739/http://retrogamingmagazine.com/2015/03/12/vipeut-asks-what-would-wipeout-look-like-on-vectrex/)
+- :memo: [VipeUt on Stiggy's blog](https://stiggyblog.wordpress.com/2011/10/22/retro-demake-vipeut/)
+- :fr: [VipeUt sur le blog d'Etienne Mineur](https://web.archive.org/web/20081016070653/http://www.my-os.net/blog/index.php?2008/10/13/1136-les-demakes)
