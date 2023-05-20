@@ -1,0 +1,180 @@
+<NML = 1.0>
+
+<Shader =
+	<Name = "core::pointlight">
+
+	<Input = <Id = "@gbuffer:0"> <Var = "nrm_dpth">>
+	<Input = <Id = "@gbuffer:1"> <Var = "col_illum">>
+	<Input = <Id = "@gbuffer:3"> <Var = "occ_diff">>
+
+	<Vertex = "
+		varying	vec3		forward;
+		void	main()
+		{
+			gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+			forward = (gl_ModelViewMatrix * gl_Vertex).xyz;
+		}
+	">
+
+	<Pixel = "
+		varying	vec3		forward;
+
+		uniform	vec2		inverse_buffer_size;
+		uniform	float		view_depth_offset;
+
+		uniform	float		range;
+		uniform vec3		position_view_space;
+		uniform vec3		diffuse_color;
+		uniform vec3		specular_color;
+
+		uniform	sampler2D	nrm_dpth;
+		uniform	sampler2D	col_illum;
+		uniform	sampler2D	occ_diff;
+
+		void	main()
+		{
+			vec2	UV = vec2(gl_FragCoord.x, gl_FragCoord.y) * inverse_buffer_size;
+			vec4	dtsg = texture2D(nrm_dpth, UV);
+			vec3	frag_viewpos = (forward / forward.z) * (dtsg.w + view_depth_offset);
+
+			// Normal in viewmodel space.
+			vec3	normal = vec3(dtsg.x, dtsg.y, dtsg.z);
+
+			// Light diffuse contribution.
+			vec3	dt = frag_viewpos - position_view_space;
+			float	dl = length(dt);
+			dt = dt / dl;
+			float	atten = range > 0.0 ? max(1.0 - dl / range, 0.0) : 1.0;
+			float	idiff = max(-dot(dt, normal) * atten, 0.0);
+
+			// Full contribution.
+			vec4	pxl_col_illum = texture2D(col_illum, UV);
+			vec4	pxl_occ_diff = texture2D(occ_diff, UV);
+			gl_FragColor = vec4(pxl_col_illum.rgb * diffuse_color * pxl_occ_diff.a * idiff, 1.0);
+		}
+	">
+>
+
+<Shader =
+	<Name = "core::pointlight_specular">
+
+	<Input = <Id = "@gbuffer:0"> <Var = "nrm_dpth">>
+	<Input = <Id = "@gbuffer:1"> <Var = "col_illum">>
+	<Input = <Id = "@gbuffer:2"> <Var = "spec_gloss">>
+	<Input = <Id = "@gbuffer:3"> <Var = "occ_diff">>
+
+	<Vertex = "
+		varying	vec3		forward;
+		void	main()
+		{
+			gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+			forward = (gl_ModelViewMatrix * gl_Vertex).xyz;
+		}
+	">
+
+	<Pixel = "
+		varying	vec3		forward;
+
+		uniform	vec2		inverse_buffer_size;
+		uniform	float		view_depth_offset;
+
+		uniform	float		range;
+		uniform vec3		position_view_space;
+		uniform vec3		diffuse_color;
+		uniform vec3		specular_color;
+
+		uniform	sampler2D	nrm_dpth;
+		uniform	sampler2D	col_illum;
+		uniform sampler2D	spec_gloss;
+		uniform	sampler2D	occ_diff;
+
+		void	main()
+		{
+			vec2	UV = vec2(gl_FragCoord.x, gl_FragCoord.y) * inverse_buffer_size;
+			vec4	dtsg = texture2D(nrm_dpth, UV);
+			vec3	frag_viewpos = (forward / forward.z) * (dtsg.w + view_depth_offset);
+
+			// Normal in viewmodel space.
+			vec3	normal = vec3(dtsg.x, dtsg.y, dtsg.z);
+
+			// Light diffuse contribution.
+			vec3	dt = frag_viewpos - position_view_space;
+			float	dl = length(dt);
+			dt = dt / dl;
+			float	atten = range > 0.0 ? max(1.0 - dl / range, 0.0) : 1.0;
+			float	idiff = max(-dot(dt, normal) * atten, 0.0);
+
+			// Light specular contribution.
+			vec4	pxl_spec_gloss = texture2D(spec_gloss, UV);
+			vec3	e = reflect(normalize(frag_viewpos), normal);
+			float	ispec = pow(max(-dot(dt, normalize(e)) * atten, 0.0), pxl_spec_gloss.a * 96.0);
+
+			// Full contribution.
+			vec4	pxl_col_illum = texture2D(col_illum, UV);
+			vec4	pxl_occ_diff = texture2D(occ_diff, UV);
+			gl_FragColor = vec4(pxl_col_illum.rgb * diffuse_color * idiff * pxl_occ_diff.a + pxl_spec_gloss.rgb * specular_color * ispec, 1.0);
+		}
+	">
+>
+
+<Shader =
+	<Name = "core::pointlight_specular_occ">
+
+	<Input = <Id = "@gbuffer:0"> <Var = "nrm_dpth">>
+	<Input = <Id = "@gbuffer:1"> <Var = "col_illum">>
+	<Input = <Id = "@gbuffer:2"> <Var = "spec_gloss">>
+	<Input = <Id = "@gbuffer:3"> <Var = "occ_diff">>
+
+	<Vertex = "
+		varying	vec3		forward;
+		void	main()
+		{
+			gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+			forward = (gl_ModelViewMatrix * gl_Vertex).xyz;
+		}
+	">
+
+	<Pixel = "
+		varying	vec3		forward;
+
+		uniform	vec2		inverse_buffer_size;
+		uniform	float		view_depth_offset;
+
+		uniform	float		range;
+		uniform vec3		position_view_space;
+		uniform vec3		diffuse_color;
+		uniform vec3		specular_color;
+
+		uniform	sampler2D	nrm_dpth;
+		uniform	sampler2D	col_illum;
+		uniform sampler2D	spec_gloss;
+		uniform	sampler2D	occ_diff;
+
+		void	main()
+		{
+			vec2	UV = vec2(gl_FragCoord.x, gl_FragCoord.y) * inverse_buffer_size;
+			vec4	dtsg = texture2D(nrm_dpth, UV);
+			vec3	frag_viewpos = (forward / forward.z) * (dtsg.w + view_depth_offset);
+
+			// Normal in viewmodel space.
+			vec3	normal = vec3(dtsg.x, dtsg.y, dtsg.z);
+
+			// Light diffuse contribution.
+			vec3	dt = frag_viewpos - position_view_space;
+			float	dl = length(dt);
+			dt = dt / dl;
+			float	atten = range > 0.0 ? max(1.0 - dl / range, 0.0) : 1.0;
+			float	idiff = max(-dot(dt, normal) * atten, 0.0);
+
+			// Light specular contribution.
+			vec4	pxl_spec_gloss = texture2D(spec_gloss, UV);
+			vec3	e = reflect(normalize(frag_viewpos), normal);
+			float	ispec = pow(max(-dot(dt, normalize(e)) * atten, 0.0), pxl_spec_gloss.a * 96.0);
+
+			// Full contribution.
+			vec4	pxl_col_illum = texture2D(col_illum, UV);
+			vec4	pxl_occ_diff = texture2D(occ_diff, UV);
+			gl_FragColor = vec4(pxl_occ_diff.rgb * (pxl_col_illum.rgb * diffuse_color * idiff * pxl_occ_diff.a + pxl_spec_gloss.rgb * specular_color * ispec), 1.0);
+		}
+	">
+>

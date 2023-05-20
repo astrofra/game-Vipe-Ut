@@ -1,0 +1,29 @@
+<NML = 1.0>
+
+<Shader =
+	<Name = "core::ambient">
+
+	<Input = <Id = "@gbuffer:1"> <Var = "col_illum">>
+	<Input = <Id = "@gbuffer:3"> <Var = "occ_diff">>
+	<Input = <Id = "@inverse_buffer_size"> <Var = "inverse_buffer_size">>
+
+	<Vertex = "
+		void	main()
+		{
+			gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+		}
+	">
+	<Pixel = "
+		uniform	vec2		inverse_buffer_size;
+		uniform	sampler2D	col_illum;
+		uniform	sampler2D	occ_diff;
+
+		void	main()
+		{
+			vec2	UV = vec2(gl_FragCoord.x, gl_FragCoord.y) * inverse_buffer_size;
+			vec4	pxl_col_illum = texture2D(col_illum, UV);
+			vec4	pxl_occ_diff = texture2D(occ_diff, UV);
+			gl_FragColor = vec4(pxl_col_illum.rgb * (gl_LightModel.ambient.rgb * pxl_occ_diff.rgb * pxl_occ_diff.a + pxl_col_illum.aaa), 1.0);
+		}
+	">
+>

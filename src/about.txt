@@ -1,0 +1,29 @@
+//////////////
+VipeUt demake.
+//////////////
+
+Made for the "Bootlet Demake" TIGSource contest, on tigsource.com.
+
+Run it on a PC, WinXP or Vista, with a rather recent 3D card.
+
+During the install, u'll be prompted to deploy OpenAL. Please install it, unless you know you already have them, otherwise, the demo won't probably start.
+
+The installer creates two shortcuts on the desktop, one using the full featured renderer (OpenGL 2.0), the other one using a more consusual rendering method, not as pretty but fairly ok.
+
+Controls : use the arrow keys. Up = accelerate, Left & Right to strafe, Down = brake. The paddle is disabled.
+
+Press ESC to quit the game.
+
+The game is known to crash on some configurations. So far, it reported running successfully, with updated drivers, on a :
+
+- Geforce Go 7600, Geforce 8800 GTX, GeForce 7950 GTX, geforce go 7300, GForce 6800 XT, 9600GT
+- ATI X1300, ATI 3670, HD2900XT,
+
+Doesn't work on a  :
+
+- SiS 651
+
+//////////////
+3D Engine		:	Barr (b34r44@gmail.com)
+Visuals/code	:	Astrofra (astrofra@gmail.com)
+Music			:	Rez (chiptune@gmail.com)

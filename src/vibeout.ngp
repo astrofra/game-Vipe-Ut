@@ -1,0 +1,19 @@
+<NML=1.0>
+<Environment=
+	<Name="New Project">
+	<Scenes=
+		<Scene=
+			<URI="NewScene">
+		>
+		<Scene=
+			<URI="props/enemy.nms">
+		>
+		<Scene=
+			<URI="scene.nms">
+		>
+	>
+	<Include>
+	<SearchPaths=
+		<Path="e:/3D/vibe_out/svn/mddta/">
+	>
+>

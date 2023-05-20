@@ -1,0 +1,292 @@
+nEngine stand-alone executable.
+nEngine version: 2.4.1
+Emmanuel Julien 2001-2008
+
+
+-- Low-level engine configuration:
+   TextureForceTrueColor = True.
+   TextureNoDownscale = False.
+
+[H] Starting OpenGL 2.0 renderer...
+[H] Fetch GL extensions...
+Renderer instantiated with shader support.
+Card MRT supports up to 8 target(s).
+Loading shader library 'default_shaders.nml' (profile GLSL_Deferred;)...
+Done, 32 shader(s) in library.
+
+Vendor: NVIDIA Corporation
+Renderer: GeForce GT 750M/PCIe/SSE2
+Version: 4.4.0
+
+No supersampling.
+[*] (nGL2Renderer::SetupOpenGL:148) No HDR support.
+[H] Checking glClear() range.
+Starting OpenAL1.1 mixer...
+Device: Generic Software
+Audio device supports EAX2.0.
+32 mixer channel.
+Done.
+
+-- Font 'default.ttf' loaded as 'default'.
+Tau alloc = 212992 byte(s) (2048 node(s), 4096 contact(s)).
+[H] Parsing metascene 'scene.nms'
+
+Loading geometry 'meshes/track_mesh_firestar.nmg'.
+960 vertice, 1600 polygon(s), 1 material(s).
+-- Building bounding interval hierarchy BIH...
+-- Done in 0.200ms. 755 nodes, 378 leaves, depth = 13.
+Loading geometry 'meshes/screen.nmg'.
+35 vertice, 48 polygon(s), 1 material(s).
+Loading geometry 'meshes/ship_feisar.nmg'.
+78 vertice, 130 polygon(s), 1 material(s).
+Loading geometry 'meshes/bonus_cube.nmg'.
+8 vertice, 12 polygon(s), 2 material(s).
+Loading geometry 'meshes/speed_up.nmg'.
+25 vertice, 32 polygon(s), 1 material(s).
+Loading geometry 'meshes/screen_noshader.nmg'.
+35 vertice, 48 polygon(s), 1 material(s).
+Loading geometry 'meshes/osd_power_barr.nmg'.
+16 vertice, 16 polygon(s), 1 material(s).
+Loading geometry 'meshes/osd_race_finished.nmg'.
+25 vertice, 32 polygon(s), 1 material(s).
+Loading geometry 'meshes/bonus_cross.nmg'.
+32 vertice, 60 polygon(s), 1 material(s).
+Loading geometry 'meshes/bonus_cross_fat.nmg'.
+56 vertice, 108 polygon(s), 1 material(s).
+Loading geometry 'meshes/background_black.nmg'.
+35 vertice, 48 polygon(s), 1 material(s).
+Loading geometry 'meshes/osd_press_space.nmg'.
+25 vertice, 32 polygon(s), 1 material(s).
+Loading geometry 'meshes/osd_autopilot_off.nmg'.
+25 vertice, 32 polygon(s), 1 material(s).
+Loading texture 'dither.tga' engine attributes.
+Converting geometry to triangle list...
+Done, in 0ms. Average: 1600.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Material 01 - Default is frame buffer dependent due to custom shader requirement (will forward render).
+Material 01 - Default is frame buffer dependent due to custom shader requirement (will forward render).
+Converting geometry to triangle list...
+Material 01 - Default is frame buffer dependent due to custom shader requirement (will forward render).
+Done, in 0ms. Average: 24.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 130.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 6.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 10.667 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 24.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 8.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 16.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 60.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 108.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 24.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 16.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+Converting geometry to triangle list...
+Done, in 0ms. Average: 16.000 tri/list, 0.000 bone/list.
+Optimizing triangle list...
+[H] Scene setup
+
+Script unit instantiating class 'Player'.
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'Object01' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 0, avg = 0, original = 2, total = 0).
+         Memory usage = 10240 byte(s), took 0.000 ms.
+
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'track_4' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 32, avg = 1, original = 641, total = 896).
+         Memory usage = 38912 byte(s), took 93.000 ms.
+
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'track_3' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 32, avg = 1, original = 641, total = 905).
+         Memory usage = 39200 byte(s), took 62.300 ms.
+
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'track_2' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 35, avg = 1, original = 641, total = 902).
+         Memory usage = 39104 byte(s), took 63.000 ms.
+
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'track_1' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 34, avg = 1, original = 641, total = 904).
+         Memory usage = 39168 byte(s), took 64.300 ms.
+
+[*] (nMotion::FromMetaTag:47) Unknown tag 'UId' in <Motion>.
+-- Building AI path 'track_0' query structure (512 bucket(s))...
+   Done. Query structure statistics:
+         Low = 0, high = 29, avg = 1, original = 641, total = 907).
+         Memory usage = 39264 byte(s), took 62.900 ms.
+
+6 AI path(s) in world.
+[S] Found track #0
+[S] Track length = 4796.8
+[S] Found track #1
+[S] Track length = 4782.7
+[S] Found track #2
+[S] Track length = 4768.6
+[S] Found track #3
+[S] Track length = 4754.49
+[S] Found track #4
+[S] Track length = 4740.4
+Loading sound 'sfx/sfx_engine_0.wav'.
+Sample format: 8KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_engine_1.wav'.
+Sample format: 8KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_booster.wav'.
+Sample format: 22KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_missiles.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_quake.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_power_up.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_autopilot.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_autopilot_off.wav'.
+Sample format: 22KHz@8bit, 1 channel(s).
+Loading sound 'sfx/sfx_blow_up.wav'.
+Sample format: 22KHz@8bit, 1 channel(s).
+Loading sound 'sfx/sfx_collision_0.wav'.
+Sample format: 11KHz@8bit, 1 channel(s).
+Loading sound 'sfx/sfx_collision_1.wav'.
+Sample format: 11KHz@8bit, 1 channel(s).
+Loading sound 'sfx/sfx_collision_2.wav'.
+Sample format: 11KHz@8bit, 1 channel(s).
+[S] Player :: g_main_player_instance = (instance : 0x024899D0)
+[S] Player :: OnSetup() done
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #0
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #1
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #2
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #3
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #4
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #5
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #6
+Script unit instantiating class 'RaceManager'.
+[S] Found track #0
+[S] Track length = 4796.8
+[S] Found track #1
+[S] Track length = 4782.7
+[S] Found track #2
+[S] Track length = 4768.6
+[S] Found track #3
+[S] Track length = 4754.49
+[S] Found track #4
+[S] Track length = 4740.4
+Loading sound 'sfx/sfx_lap_0.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_1.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_2.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_3.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_4.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_5.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_lap_6.wav'.
+Sample format: 44KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_start_0.wav'.
+Sample format: 22KHz@8bit, 1 channel(s).
+Loading sound 'musics/rez-subatomic_16.wav'.
+Sample format: 16KHz@16bit, 2 channel(s).
+[S] RaceManager :: OnSetup() done
+Script unit instantiating class 'GameManager'.
+[S] GameManager :: g_render_noshader = 0
+Loading sound 'sfx/sfx_vectrex_static.wav'.
+Sample format: 22KHz@16bit, 1 channel(s).
+Loading sound 'sfx/sfx_vectrex_boot_jingle.wav'.
+Sample format: 22KHz@16bit, 1 channel(s).
+[S] GameManager :: OnSetup() done
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #7
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #8
+Script unit instantiating class 'Enemy'.
+[S] Found track #0
+[S] Found track #1
+[S] Found track #2
+[S] Found track #3
+[S] Found track #4
+[S] Registering enemy #9
+Script unit instantiating class 'Light'.
+[S] Light flickering activated
+Script unit instantiating class 'Light'.
+[S] Light flickering activated
+[H] Scene reset
