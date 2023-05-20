@@ -1,24 +1,24 @@
 # Vipe Üt
 
-_A game prototype made for the TigSoure "Bootleg Demakes" contest in 2008._
+_A game prototype made for the TigSource "Bootleg Demakes" contest in 2008._
 
 [![Vipe Ut cover](img/vipeut_cover_thumb.png)](img/vipeut_cover_HD.png)
 
-This is the **alpha version of this VipeUt demake** that was created for a TigSource contest during the course of 1 month (mostly evenings and week-ends). The contest deadline eventually arrived so this is pretty much the latest version of this project. I might refine things here & there, or I might not.
+This is the **alpha version of this VipeUt demake** that was created for a TigSource contest during the course of 1 month (mostly evenings and week-ends). The contest deadline eventually arrived so this is pretty much the latest version of this project. I might refine/reboot things some day, or I might not.
 
 ## The concept
 
-Arround 2008, TIGSource (short for The Independent Gaming Source) hosted various game development competitions, one of which was the ["Bootleg Demake"](https://www.tigsource.com/2008/08/01/tigcompo-bootleg-demakes/) competition. In this event, participants reimagined modern or classic games as if they were made on older or simpler technology, like turning a 3D game into a 2D game or simplifying high-end graphics to mimic older consoles.
+:tiger: Around 2008, TIGSource (short for The Independent Gaming Source) hosted various game development competitions, one of which was the ["Bootleg Demake"](https://www.tigsource.com/2008/08/01/tigcompo-bootleg-demakes/) competition. In this event, participants reimagined modern or classic games as if they were made on older or simpler technology, like turning a 3D game into a 2D game or simplifying high-end graphics to mimic older consoles.
 
 ![Vipe Ut screenshots](img/vipeut_presentation.png)
 
 For the TIGSource "Bootleg Demakes" competition, I reimagined ["Wipe Out"](https://www.youtube.com/watch?v=XASEBvDri4U) for the [Vectrex](https://en.wikipedia.org/wiki/Vectrex), a console known for its simple vector graphics. This drastically transformed the game's visuals, adapting its high-speed, colorful environment into monochrome, vector-based imagery. Moreover, I presented this demake as if it had been bootlegged in Eastern Bloc countries before the USSR's collapse, adding a layer of historical context to the challenge.
 
-Sound-wise, I had the chance to use one of [Christophe 'Rez' Resigné](https://twitter.com/chiptune)'s soundtrack he made back then on the real Gameboy console. This soundtrack was close from what the actual sound of a Vectrex game would look like.
+Sound-wise, I had the chance to use one of [Christophe 'Rez' Resigné](https://twitter.com/chiptune)'s soundtracks he composed back then on a real Gameboy console. This soundtrack was close from what the actual music of a Vectrex game would sound like.
 
 The game is implemented in [Squirrel](https://github.com/albertodemichelis/squirrel), based on [GameStart3D](https://www.youtube.com/@GameStart3D/videos). It actually run on a PC and **not** on the genuine Vectrex.
 
-## How to play ?
+## :joystick: How to play ?
 
 This game is a legacy program (2008) but it should _(might)_ run on a **PC Win32 machine**, with any rather recent 3D card.
 
