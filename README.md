@@ -1,3 +1,5 @@
+<img src="img/tigslogo.png" align="right" width="80"/>
+
 # Vipe Üt
 
 _A game prototype made for the TigSource "Bootleg Demakes" contest in 2008._
